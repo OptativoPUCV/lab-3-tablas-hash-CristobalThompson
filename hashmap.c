@@ -58,7 +58,7 @@ HashMap * createMap(long capacity) {
     if (aux->buckets == NULL) exit(1);
     aux->capacity = capacity;
     aux->size = 0;
-    aux->current = 0;
+    aux->current = -1;
 
     return aux;
 }
