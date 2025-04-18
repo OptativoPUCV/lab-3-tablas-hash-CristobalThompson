@@ -82,3 +82,21 @@ Thu, Apr 17, 2025  9:43:56 PM:
  hashmap.c | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 dc06bfa
+Thu, Apr 17, 2025  9:47:38 PM: 
+ hashmap.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+Compilation failed
+In file included from test.c:4:
+hashmap.c: In function 'createMap':
+hashmap.c:57:30: error: too few arguments to function 'calloc'
+   57 |     aux->buckets = (Pair **) calloc(capacity * sizeof(Pair *));
+      |                              ^~~~~~
+In file included from test.c:2:
+C:/TDM-GCC-64/x86_64-w64-mingw32/include/stdlib.h:529:17: note: declared here
+  529 |   void *__cdecl calloc(size_t _NumOfElements,size_t _SizeOfElements);
+      |                 ^~~~~~
+test.c: At top level:
+test.c:8:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    8 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+678504d
