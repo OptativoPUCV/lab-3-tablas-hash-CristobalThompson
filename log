@@ -55,3 +55,18 @@ test.c:8:8: warning: '_strdup' redeclared without dllimport attribute: previous 
     8 | char * _strdup(const char * str) {
       |        ^~~~~~~
 d8ffb41
+Thu, Apr 17, 2025  9:41:17 PM: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:4:
+hashmap.c: In function 'createMap':
+hashmap.c:57:37: error: 'map' undeclared (first use in this function)
+   57 |     aux->buckets = (Pair **) malloc(map->capacity * sizeof(Pair *));
+      |                                     ^~~
+hashmap.c:57:37: note: each undeclared identifier is reported only once for each function it appears in
+test.c: At top level:
+test.c:8:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    8 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+9b7cf7e
