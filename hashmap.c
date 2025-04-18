@@ -55,8 +55,8 @@ HashMap * createMap(long capacity) {
     HashMap* aux = (HashMap *) malloc(sizeof(HashMap));
     if (aux == NULL) exit(1);
     aux->capacity = capacity;
-    //aux->buckets = (Pair **) malloc(aux->capacity * sizeof(Pair *));
-    aux->buckets = NULL;
+    aux->buckets = (Pair **) malloc(aux->capacity * sizeof(Pair *));
+    //aux->buckets = NULL;
     //if (aux->buckets == NULL) exit(1);
     aux->size = 0;
     aux->current = 0;
