@@ -116,3 +116,17 @@ Thu, Apr 17, 2025 11:12:16 PM:
  hashmap.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 4992d94
+Thu, Apr 17, 2025 11:12:51 PM: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:
+hashmap.c: In function 'insertMap':
+hashmap.c:44:28: error: incompatible types when assigning to type 'Pair' from type 'void *'
+   44 |     *(map->buckets)[pos] = value;
+      |                            ^~~~~
+test.c: At top level:
+test.c:8:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    8 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+fe380af
