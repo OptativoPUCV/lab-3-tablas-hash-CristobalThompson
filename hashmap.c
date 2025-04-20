@@ -59,6 +59,17 @@ void insertMap(HashMap * map, char * key, void * value) {
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
+    long tope = map->capacity;
+    map->capacity *= 2;
+    Pair** aux = map->buckets;
+    free(map->buckets);
+    map->buckets = (Pair **) calloc(map->capacity, sizeof(Pair *));
+    if (map->buckets == NULL) exit(1);
+
+    for (long k = 0; k <= tope; ++k){
+        insertMap(map->buckets,aux[k]->key, aux[k]->value);
+    }
+    free(aux);
 
 
 }
@@ -119,8 +130,8 @@ Pair * firstMap(HashMap * map) {
 
 Pair * nextMap(HashMap * map) {
     long pos = (map->current + 1) % map->capacity;
-    long tope = map->capacity;
     if (pos == 0) return NULL;
+    long tope = map->capacity;
     while (pos != tope){
         if ((map->buckets)[pos] != NULL && (map->buckets)[pos]->key != NULL){
             map->current = pos;
