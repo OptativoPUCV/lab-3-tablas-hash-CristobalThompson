@@ -88,6 +88,7 @@ Pair * searchMap(HashMap * map,  char * key) {
         if ((map->buckets)[pos] == NULL) return NULL;
         if ((map->buckets)[pos] != NULL && is_equal(key, (map->buckets)[pos]->key)){
             return (map->buckets)[pos];
+            map->current = pos;
         }
     }
 
