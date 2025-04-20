@@ -62,7 +62,6 @@ void enlarge(HashMap * map) {
     long tope = map->capacity;
     map->capacity *= 2;
     Pair** aux = map->buckets;
-    free(map->buckets);
     map->buckets = (Pair **) calloc(map->capacity, sizeof(Pair *));
     if (map->buckets == NULL) exit(1);
 
