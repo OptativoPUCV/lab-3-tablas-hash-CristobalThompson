@@ -67,7 +67,8 @@ void enlarge(HashMap * map) {
     if (map->buckets == NULL) exit(1);
 
     for (long k = 0; k <= tope; ++k){
-        insertMap(map->buckets,aux[k]->key, aux[k]->value);
+        if (aux[k] != NULL)
+            insertMap(map->buckets,aux[k]->key, aux[k]->value);
     }
     free(aux);
 
