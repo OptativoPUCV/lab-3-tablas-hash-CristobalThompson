@@ -70,8 +70,6 @@ void enlarge(HashMap * map) {
             insertMap(map,aux[k]->key, aux[k]->value);
     }
     free(aux);
-
-
 }
 
 
